@@ -8,14 +8,14 @@ A NativeScript plugin to extend segmentBar, make style same in android and ios.
 
 Sample 1
 --------
-![Sample1](src/images/android.png)
+![Sample1](images/android.png)
 
 
 #### iOS
 
 Sample 1
 --------
-![Sample1](src/images/ios.png)
+![Sample1](images/ios.png)
 
 
 
