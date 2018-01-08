@@ -2,7 +2,21 @@
 
 A NativeScript plugin to extend segmentBar, make style same in android and ios.
 
-## (Optional) Prerequisites / Requirements
+## Sample Screenshots
+
+#### Android
+
+Sample 1
+--------
+![Sample1](src/images/android.png)
+
+
+#### iOS
+
+Sample 1
+--------
+![Sample1](src/images/ios.png)
+
 
 
 ## Installation

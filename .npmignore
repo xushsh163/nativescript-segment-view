@@ -1,5 +1,6 @@
 demo
+images
 *.map
-!*.ts
+*.ts
 !*.d.ts
 tsconfig.json
