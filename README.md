@@ -1,6 +1,6 @@
 # nativescript-segment-view
 
-A NativeScript plugin to provide an XML widget to implement the Material Design CardView component.
+A NativeScript plugin to extend segmentBar, make style same in android and ios.
 
 ## (Optional) Prerequisites / Requirements
 
@@ -40,21 +40,21 @@ export class HelloWorldModel extends Observable {
     super();
 
     // this.segmentView = new NSSegmentView();
-    this.message = "test001";
+    this.message = "examples";
     this.tabItems = [];
     const item1 = new NSSegmentViewItem();
-    item1.title = '样品清单';
+    item1.title = 'custom_item1';
     this.tabItems.push(item1);
     const item2 = new NSSegmentViewItem();
-    item2.title = '供应商列表';
+    item2.title = 'custom_item2';
     this.tabItems.push(item2);
 
     this.tabItems2 = [];
     const item21 = new NSSegmentViewItem();
-    item21.title = '样品清单2';
+    item21.title = 'default_item1';
     this.tabItems2.push(item21);
     const item22 = new NSSegmentViewItem();
-    item22.title = '供应商列表2';
+    item22.title = 'default_item2';
     this.tabItems2.push(item22);
   }
 }
