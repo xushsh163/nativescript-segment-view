@@ -42,7 +42,7 @@ function initializeNativeClasses(): void {
     selectedIndicatorThickness = layout.toDevicePixels(apiLevel >= 21 ? 2 : 5);
 
     @Interfaces([android.widget.TabHost.OnTabChangeListener])
-    class TabChangeListenerImpl extends java.lang.Object implements android.widget.TabHost.OnTabChangeListener {
+    class NSTabChangeListenerImpl extends java.lang.Object implements android.widget.TabHost.OnTabChangeListener {
         constructor(public owner: NSSegmentView) {
             super();
             return global.__native(this);
@@ -85,7 +85,7 @@ function initializeNativeClasses(): void {
         }
     }
 
-    class TabHostImpl extends android.widget.TabHost {
+    class NSTabHostImpl extends android.widget.TabHost {
         constructor(context: android.content.Context, attrs: android.util.AttributeSet) {
             super(context, attrs);
             return global.__native(this);
@@ -96,8 +96,8 @@ function initializeNativeClasses(): void {
         }
     }
 
-    TabHost = TabHostImpl;
-    TabChangeListener = TabChangeListenerImpl;
+    TabHost = NSTabHostImpl;
+    TabChangeListener = NSTabChangeListenerImpl;
     TabContentFactory = TabContentFactoryImpl;
 }
 
