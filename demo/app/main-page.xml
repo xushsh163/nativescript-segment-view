@@ -1,0 +1,10 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
+  xmlns:ui="nativescript-segment-view">
+  <StackLayout class="p-20">
+    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
+    <ui:n-s-segment-view id="111" items="{{tabItems}}" height="60" selectedIndexChanged="selectedIndexChanged"
+      style="seg-background-color:#EEE;selected-background-color:#FF0;line-color:#000;selected-color:#F00;title-color:#0F0;"></ui:n-s-segment-view>
+      <ui:n-s-segment-view id="222" items="{{tabItems2}}" height="30" selectedIndexChanged="selectedIndexChanged"></ui:n-s-segment-view>
+  </StackLayout>
+  
+</Page>
