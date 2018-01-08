@@ -1,6 +1,6 @@
 {
     "name": "nativescript-segment-view",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "description": "Make same style of segmentbar in android and ios, and have more attributes",
     "main": "n-s-segment-view",
     "typings": "index.d.ts",
@@ -33,17 +33,18 @@
         "NativeScript",
         "JavaScript",
         "Android",
-        "iOS"
+        "iOS",
+        "Segment"
     ],
     "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
+        "name": "xushsh163",
+        "email": "xushsh163@163.com"
     },
+    "homepage": "https://github.com/xushsh163/nativescript-segment-view",
     "bugs": {
         "url": "https://github.com/xushsh163/nativescript-segment-view/issues"
     },
-    "license": "Apache-2.0",
-    "homepage": "https://github.com/xushsh163/nativescript-segment-view",
+    "license": "MIT Lisence",   
     "readmeFilename": "README.md",
     "devDependencies": {
         "tns-core-modules": "^3.1.0",

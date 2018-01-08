@@ -118,10 +118,12 @@ class NSSegmentViewColorDrawable extends android.graphics.drawable.ColorDrawable
         p.setColor(this.getColor());
         p.setStyle(android.graphics.Paint.Style.FILL);
         canvas.drawRect(0, this.getBounds().height() - this.thickness, this.getBounds().width(), this.getBounds().height(), p);
-        const p2 = new android.graphics.Paint();
+        if (this.selectedBackgroundColor != null) {
+            const p2 = new android.graphics.Paint();
         p2.setColor(this.selectedBackgroundColor.android);
         p2.setStyle(android.graphics.Paint.Style.FILL);
         canvas.drawRect(0, 0, this.getBounds().width(), this.getBounds().height() - this.thickness, p2);
+        }
     }
 }
 
@@ -159,7 +161,7 @@ export class NSSegmentViewItem extends NSSegmentViewItemBase {
     }
 
     public updateBackground() {
-        if (this.lineColor == null || this.selectedBackgroundColor == null) {
+        if (this.lineColor == null) {
             return;
         }
         const nativeView = this.nativeViewProtected;
@@ -299,16 +301,16 @@ export class NSSegmentView extends NSSegmentViewBase {
 
     public createNativeView() {
         initializeNativeClasses();
-        console.log("createNativeView");
+        // console.log("createNativeView");
         const context: android.content.Context = this._context;
         const nativeView = new TabHost(context, null);
         // this.height = utils.layout.toDevicePixels(40);
-        console.log("this-height=" + this.height);
+        // console.log("this-height=" + this.height);
         const tabHostLayout = new android.widget.LinearLayout(context);
         tabHostLayout.setOrientation(android.widget.LinearLayout.VERTICAL);
 
         const tabWidget = new android.widget.TabWidget(context);
-        console.log("tabWidget-height=" + tabWidget.getHeight());
+        // console.log("tabWidget-height=" + tabWidget.getHeight());
         tabWidget.setId(R_ID_TABS);
         tabHostLayout.addView(tabWidget);
 
@@ -351,7 +353,7 @@ export class NSSegmentView extends NSSegmentViewBase {
         tabItem.setupNativeView(index);
         this._addingTab = false;
         const i = tabHost.getTabWidget().getTabCount() - 1;
-        console.log("index2=" + i);
+        // console.log("index2=" + i);
         if (this.height === "auto") {
             this.height = 30;
         }
@@ -412,24 +414,30 @@ export class NSSegmentView extends NSSegmentViewBase {
         if (newItems) {
             newItems.forEach((item, i, arr) => this.insertTab(item, i));
         }
-
-        // selectedIndexProperty.coerce(this);
+        // this.nativeViewProtected.setCurrentTab(0);
+        selectedIndexProperty.coerce(this);
     }
 
     [titleColorProperty.getDefault](): Color {
         return this.textColor;
     }
     [titleColorProperty.setNative](value: Color) {
-        console.log("titleColorProperty=" + value);
+        // console.log("titleColorProperty=" + value);
         this.textColor = value;
+        setTimeout(() => {
+            this.updateTextColor();
+        }, 100);
         // this.updateTextColor();
     }
     [selectedColorProperty.getDefault](): Color {
         return this.selectedTextColor;
     }
     [selectedColorProperty.setNative](value: Color) {
-        console.log("selectedColorProperty=" + value);
+        // console.log("selectedColorProperty=" + value);
         this.selectedTextColor = value;
+        setTimeout(() => {
+            this.updateTextColor();
+        }, 100);
         // this.updateTextColor();
     }
 }

@@ -93,27 +93,27 @@ export interface NSSegmentViewBase {
 /**
  * Gets or sets the selected index dependency property of the NSSegmentView.
  */
-export const selectedIndexProperty = new Property<NSSegmentViewBase, number>({ // CoercibleProperty
+export const selectedIndexProperty = new CoercibleProperty<NSSegmentViewBase, number>({ // CoercibleProperty
     name: "selectedIndex", defaultValue: -1,
     valueChanged: (target, oldValue, newValue) => {
         target.notify(<SelectedIndexChangedEventData>{ eventName: NSSegmentViewBase.selectedIndexChangedEvent, object: target, oldIndex: oldValue, newIndex: newValue });
     },
-    // coerceValue: (target, value) => {
-    //     let items = target.items;
-    //     if (items) {
-    //         let max = items.length - 1;
-    //         if (value < 0) {
-    //             value = 0;
-    //         }
-    //         if (value > max) {
-    //             value = max;
-    //         }
-    //     } else {
-    //         value = -1;
-    //     }
+    coerceValue: (target, value) => {
+        let items = target.items;
+        if (items) {
+            let max = items.length - 1;
+            if (value < 0) {
+                value = 0;
+            }
+            if (value > max) {
+                value = max;
+            }
+        } else {
+            value = -1;
+        }
 
-    //     return value;
-    // },
+        return value;
+    },
     valueConverter: (v) => parseInt(v)
 });
 selectedIndexProperty.register(NSSegmentViewBase);
