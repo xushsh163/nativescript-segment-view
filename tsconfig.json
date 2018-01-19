@@ -20,7 +20,10 @@
         "noFallthroughCasesInSwitch": true
     },
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "demo",
+        "demo-angular",
+        "platforms"
     ],
     "compileOnSave": false
 }

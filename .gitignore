@@ -9,6 +9,12 @@ demo/*.d.ts
 demo/platforms
 demo/node_modules
 demo/.vscode
+demo-angular/lib
+demo-angular/app/*.js
+demo-angular/*.d.ts
+demo-angular/platforms
+demo-angular/node_modules
+demo-angular/.vscode
 node_modules
 .vscode/
 *.DS_Store

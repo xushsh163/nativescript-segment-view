@@ -45,7 +45,7 @@ export class NSSegmentView extends NSSegmentViewBase {
       return -1;
   }
   [selectedIndexProperty.setNative](value: number) {
-      this.nativeView.selectedSegmentIndex = value;
+      this.nativeView.selectIndex(value);
   }
 
   [itemsProperty.getDefault](): NSSegmentViewItem[] {
